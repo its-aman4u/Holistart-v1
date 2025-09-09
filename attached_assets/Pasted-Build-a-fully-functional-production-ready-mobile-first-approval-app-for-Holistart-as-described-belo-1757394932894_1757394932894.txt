@@ -1,0 +1,43 @@
+Build a fully functional, production-ready mobile-first approval app for Holistart as described below.
+
+Reference resources (provided in project files and marked as "README.md" and "Holistart-Mobile-BRD.tex") define all business logic, design requirements, workflow, and UX standards. All data, UI copy, and logic should follow these files without deviation.
+
+App Requirements:
+
+Single-page JavaScript (vanilla or React, whichever provides best small mobile bundle), HTML, and CSS.
+
+Fully responsive and mobile-first (min. 320px width, up to 428px; safe area, 16px content padding, 44px tap targets, bottom nav, native font stack, easily scannable card design, all mobile accessibility standards).
+
+Strictly implement the workflow logic:
+
+Dashboard: Prioritize "MRF Approvals Pending" and "Onboarding Approvals Pending" as main actions/cards with real-time count badges.
+
+MRF Approval: Show department, entity, cost center, creator, positions, and salary range if ≤₹35,000. Hide salary and show escalation for >₹35,000; escalate such requests directly to Director.
+
+Onboarding Approval: Show candidate info and document statuses with actions to approve or reject (with reason).
+
+Only pending approvals must appear on dashboard/home.
+
+UI/UX: Minimal distractions, 2-3 click/tap approvals, high color-contrast, touch optimization. Consistent, modern mobile UI—do not use default Bootstrap; prefer custom CSS and brand colors as in the BRD.
+
+Routing: Use in-browser navigation only (no reloads); all pages (Dashboard, Approval Lists, Detail) must be connected in a seamless SPA flow.
+
+Data: Use provided sample data structure inline. Facilitate easy switching to real backend APIs.
+
+All text labels/content and approval logic should strictly match the attached BRD and README; do not invent new copy or flows.
+
+Deliverables:
+
+All required HTML, CSS, and JS files connected and working
+
+All app pages and components described in the resources
+
+Correct handling of salary escalation logic and real-time updates on approvals
+
+Fully mobile demo-ready (test on Chrome mobile device mode before marking complete)
+
+Quality BL: All code should be well-organized, DRY, and easy for another dev to maintain. No demo/mockups—this should be a working MVP.
+
+Only complete this scope—do not add features or flows not specified.
+
+Once built, validate zero errors/warnings, and confirm mobile readiness before marking delivery done.

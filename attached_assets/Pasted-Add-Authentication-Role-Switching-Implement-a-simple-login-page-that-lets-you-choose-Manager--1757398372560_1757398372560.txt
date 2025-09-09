@@ -1,0 +1,61 @@
+Add Authentication & Role Switching
+
+Implement a simple login page that lets you choose “Manager,” “LOB Head,” or “Director.”
+
+Store the selected role in local storage or app state.
+
+On each page, read the role and conditionally show or hide functionality:
+– Managers only see “Create MRF” (future) and their own dashboard.
+– LOB Heads see MRF approvals (≤₹35K) and onboarding.
+– Directors see only escalated requests; LOB Heads should no longer see Escalate button—auto-escalation occurs in the backend logic.
+
+Remove Manual “Escalate to Director” Button
+
+In app.js, change the salary check: if salaryMax >35,000, immediately mark request status = “escalated” and decrease LOB queue.
+
+Do not render an “Escalate” button. Instead, after you tap “Approve” on a high-salary MRF, show a note/toast: “Request auto-escalated to Director.”
+
+Ensure the Director’s queue count increments automatically.
+
+Enable Director Login & View
+
+Once escalated, load the Director dashboard page on login:
+– List only escalated MRF requests under that user’s Director role.
+
+Allow the Director to tap a request, view details, and approve/reject.
+
+After Director approval, remove it from Director queue and send a confirmation toast.
+
+Wire Up Reports & Settings
+
+Add two new pages: /reports and /settings.
+– Reports: display simple charts or summary data from sample dataset.
+– Settings: let user adjust salary threshold (default ₹35,000) and theme.
+
+Update bottom navigation so tapping “Reports” or “Settings” navigates to these pages.
+
+Ensure navigation, header title, and action bar update accordingly.
+
+Add “Full Details” Pages
+
+Create two additional detail pages:
+– Full MRF Detail: shows every field from the BRD, including cost center, business line, etc.
+– Full Onboarding Detail: includes all candidate asset requirements and onboarding tasks.
+
+Link these from the existing list pages with a “View Full Details” button.
+
+Test & Validate
+
+Start as “Manager,” create a dummy MRF in code, and submit.
+
+Login as “LOB Head” to approve low-salary; verify it goes to Onboarding.
+
+Approve a high-salary MRF and confirm it vanishes from LOB and appears in Director dashboard automatically.
+
+Login as “Director” to approve/reject escalated requests.
+
+Navigate to Reports and Settings to confirm links and UI work.
+
+Test “Full Details” pages from lists.
+
+Check mobile responsiveness in Chrome DevTools for various screen sizes.
